@@ -1,8 +1,8 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav  bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
             
@@ -71,20 +71,20 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('subject.list')}}">
-                    <i class="fa-solid fa-comment"></i>
+                    <i class="fa-solid fa-book"></i>
                     <span>Subject</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fa-solid fa-comment"></i>
+                <a class="nav-link" href="{{route('institute.list')}}">
+                    <i class="fa-solid fa-school"></i>
                     <span>Institute</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fa-solid fa-comment"></i>
-                    <span>Feedback and Support</span></a>
+                <a class="nav-link" href="{{route('tuition.list')}}">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Tuition Info</span></a>
             </li>
 
 

@@ -52,7 +52,9 @@
 
                     
                  <!-- content of the page -->
-                 @yield('content')
+                 
+                    @yield('content')
+                 
 
 
                 </div>
@@ -60,7 +62,7 @@
         </div>
         <!-- End of Content Wrapper -->
 
-         </div>
+         <!-- </div> -->
 
     
     </div>

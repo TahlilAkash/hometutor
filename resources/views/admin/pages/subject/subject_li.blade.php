@@ -1,35 +1,33 @@
 @extends('admin.master')
 @section('content')
+<h3>Subject List</h3>
 <div>
 <a class =" btn btn-success"href="{{url('/subject/form')}}">Create Subject </a>
     <table class="table">
     <thead>
         <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">ID</th>
+        <th scope="col">Subject Name</th>
+        <th scope="col">Class</th>
+        <th scope="col">Study Hours</th>
+        <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
+        @foreach($subjects as $subject)
         <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">{{$subject->id}}</th>
+        <!-- form name property -->
+        <td>{{$subject->name}}</td>       
+        <td>{{$subject->class}}</td>
+        <td>{{$subject->study_hours}}</td>
+        <td>
+            <a href="" class="btn btn-success">Edit</a>
+            <a href="" class="btn btn-danger">Delete</a>
+        </td>
         </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-        </tr>
+        @endforeach
+     
     </tbody>
     </table>
 

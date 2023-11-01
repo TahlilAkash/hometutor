@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\InstituteController;
+use App\Http\Controllers\TuitionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +27,16 @@ Route::get('/teacherlist',[TeacherController::class,'Teacherlist']);
 Route::get('/teacher/advertisement',[TeacherController::class,'T_adv']);
 
 Route::get('/subject/list',[SubjectController::class,'Subject'])->name('subject.list');
-Route::get('/subject/form',[SubjectController::class,'Create_form'])->name('subject_create_form');
+Route::get('/subject/form',[SubjectController::class,'Create_form'])->name('subject_create.form');
 Route::post('/subject/store',[SubjectController::class,'Store'])->name('subject.store');
 
+Route::get('/institute/list',[InstituteController::class,'Institute_li'])->name('institute.list');
+Route::get('/institute/form',[InstituteController::class,'Institute_form'])->name('institute.form');
+Route::post('/institute/store',[InstituteController::class,'Institute_store'])->name('institute.store');
 
+Route::get('/tuition/list',[TuitionController::class,'Tuition_list'])->name('tuition.list');
+Route::get('/tuition/form',[TuitionController::class,'Tuition_form'])->name('tuition.form');
+Route::post('/tuition/store',[TuitionController::class,'Tuition_store'])->name('tuition.store');
 
 
 

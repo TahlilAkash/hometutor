@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class Institute extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'name','class','study_hours'
+        'name','dept_name','location'
     ];
-    
 }
