@@ -21,10 +21,16 @@
     <link href="https://startbootstrap.github.io/startbootstrap-sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-
+    @notifyCss
+    <style>
+        .notify{
+            z-index: 1000000;
+        }
+    </style>
 </head>
 
 <body id="page-top">
+<x-notify::notify />
 
          <!-- Page Wrapper -->    
     <div id="wrapper">
@@ -80,7 +86,7 @@
     <!-- Page level custom scripts -->
     <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js"></script>
     <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"></script>
-
+    @notifyJs
 </body>
 
 </html>

@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tuition extends Model
 {
+    protected $guarded = [];
     use HasFactory;
-    protected $guarded=[];
+
+    public function subject() //mothod
+    {
+        return $this->belongsTo(Subject::class,'subject_name');
+    }
+
+    public function institute() //mothod
+    {
+        return $this->belongsTo(Institute::class);
+    }
+
 }

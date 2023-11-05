@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('subject_name',20);
             $table->string('tuition_type',20);
-            $table->string('institute_name');
+            $table->string('institute_name',20);
             $table->integer('salary');
             $table->timestamps();
         });

@@ -20,7 +20,7 @@
     <input type="number" class="form-control" id="" name="study_hours" placeholder="Enter Study Hours">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary text-dark">Submit</button>
 </form>
 
 @endsection

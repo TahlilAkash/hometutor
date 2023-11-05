@@ -32,5 +32,5 @@
     </table>
 
 </div>
-
+{{$subjects->links() }}
 @endsection

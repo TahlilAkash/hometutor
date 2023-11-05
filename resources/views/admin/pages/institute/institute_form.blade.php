@@ -18,6 +18,6 @@
     <input type="string" class="form-control" id="" name="location" placeholder="Enter the Address">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary text-dark">Submit</button>
 </form>
 @endsection

@@ -8,8 +8,9 @@ class SubjectController extends Controller
 {
     //retrive from database
     public function Subject(){
-        $subjects=Subject::all();
-        return view('admin.pages.subject.subject_li' ,compact('subjects'));//subject =table name
+        // $subjects=Subject::all();
+        $subjects=Subject::paginate(5);
+        return view('admin.pages.subject.subject_li' ,compact('subjects'));//subjects =table name
     }
 
     public function Create_form()
@@ -26,6 +27,7 @@ class SubjectController extends Controller
             'class'=>$request->class,
             'study_hours'=>$request->study_hours
            ]);
+           notify()->success('Submit Successfully ⚡️');
            return redirect()->route('subject.list');   
                         
 

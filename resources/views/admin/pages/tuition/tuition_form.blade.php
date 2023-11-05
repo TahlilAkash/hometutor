@@ -6,7 +6,7 @@
     @csrf
     <div class="form-group">
         <label for="">Select Subject:</label>
-        <select class="form-control" name="subject_id" id="">
+        <select required class="form-control" name="subject_id" id="">
 
             <!-- select option from subject table -->
             @foreach ($subjects as $subject)
@@ -18,12 +18,16 @@
 
     <div class="form-group">
         <label for="">Tuiton Type:</label>
-        <input type="text" class="form-control" id="" name="type" placeholder="online or offline">
+        <input required type="text" class="form-control" id="" name="type" placeholder="online or offline">
+        @error('type')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
+    
 
     <div class="form-group">
         <label for="">Select Institute:</label>
-        <select class="form-control" name="institute_id" id="">
+        <select required class="form-control" name="institute_id" id="">
 
             @foreach ($institutes as $institute )
             <option value="{{$institute->id}}">{{$institute->name}}</option>
@@ -34,10 +38,13 @@
 
     <div class="form-group">
         <label for="">Enter Salary: </label>
-        <input type="number" class="form-control" placeholder="Preferable Salary" name="preferable_salary">
+        <input required type="number" class="form-control" placeholder="Preferable Salary" name="preferable_salary">
+        @error('preferable_salary')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary text-dark">Submit</button>
 </form>
 
 
