@@ -42,9 +42,9 @@ class TuitionController extends Controller
 
         // dd($request->all()); before  storing it create model and migration
         Tuition::create([//to stote the form
-            'subject_name'=>$request->subject_id,  //database column name,request , name property of form
+            'subject_id'=>$request->subject_id,  //database column name,request , name property of form
             'tuition_type'=>$request->type,
-            'institute_name'=>$request->institute_id,
+            'institute_id'=>$request->institute_id,
             'salary'=>$request->preferable_salary
            ]);
            notify()->success('Submit Successfully ⚡️');

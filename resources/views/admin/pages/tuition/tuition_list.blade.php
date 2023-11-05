@@ -24,7 +24,7 @@
       <td>{{$tuition->subject->name}}</td>
       <!-- objects---relation--table column  if not obj--column -->
       <td>{{$tuition->tuition_type}}</td>
-      <td>{{$tuition->institute_name}}</td>
+      <td>{{$tuition->institute->name}}</td>
       <td>{{$tuition->salary}} .BDT</td>
       <td>
         <a href="" class="btn btn-success">Edit</a>

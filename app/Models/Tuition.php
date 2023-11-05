@@ -12,7 +12,7 @@ class Tuition extends Model
 
     public function subject() //mothod
     {
-        return $this->belongsTo(Subject::class,'subject_name');
+        return $this->belongsTo(Subject::class);//,'subject_name'
     }
 
     public function institute() //mothod
