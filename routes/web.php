@@ -51,6 +51,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-//Route::get('/about',[AboutController::class,'AboutPage']);
+//Route::get('/about',[AboutController::class,'AboutPage'])->name(aboutpage);
 
 //Route::get('/contacts',[ContactsController::class,'Contacts']);
