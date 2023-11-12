@@ -27,8 +27,12 @@ Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('adm
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin/logout',[UserController::class, 'logout'])->name('admin.logout');
-
     Route::get('/', [HomeController::class, 'Home'])->name('admin.dashboard');
+
+    Route::get('/users',[UserController::class, 'list'])->name('user.list');
+    Route::get('/users/create',[UserController::class, 'createForm'])->name('users.Formcreate');
+    Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
+
 
     Route::get('/studentlist', [StudentController::class, 'Studentlist']);
     Route::get('/student/advertisement', [StudentController::class, 'Student_Adv']);

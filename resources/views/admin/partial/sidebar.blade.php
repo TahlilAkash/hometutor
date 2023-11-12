@@ -95,6 +95,11 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('user.list')}}">
+                    <i class="fa-solid fa-user"></i>    
+                    <span>Users</span></a>
+            </li>
             
 </ul>
 

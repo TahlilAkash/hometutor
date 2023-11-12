@@ -31,7 +31,7 @@
                     Profile
                 </a>
                 
-                <a class="dropdown-item " href="{{route('admin.logout')}}">
+                <a class="dropdown-item " href="{{route('admin.logout')}}">{{auth()->user()->name}}
                 <i class="fa-solid fa-right-from-bracket mr-2 text-gray-400"></i>
                     Logout
                 </a>
