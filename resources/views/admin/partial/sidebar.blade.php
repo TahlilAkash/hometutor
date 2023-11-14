@@ -34,8 +34,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Students Activities:</h6>
-                        <a class="collapse-item" href="{{url('/studentlist')}}">Student List</a>
-                        <a class="collapse-item" href="{{url('/student/advertisement')}}">Students Advertisement</a>
+                        <a class="collapse-item" href="{{route('student.list')}}">Student List</a>
+                        <a class="collapse-item" href="{{route('student.post')}}">Students Advertisement</a>
                     </div>
                 </div>
             </li>
@@ -51,8 +51,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Teacher Activities:</h6>
-                        <a class="collapse-item" href="{{url('/teacherlist')}}">Teacher List</a>
-                        <a class="collapse-item" href="{{url('/teacher/advertisement')}}">Teacher Advertisement</a>
+                        <a class="collapse-item" href="{{route('teacher.list')}}">Teacher List</a>
+                        <a class="collapse-item" href="{{route('teacher.post')}}">Teacher Advertisement</a>
                         
                     </div>
                 </div>
@@ -76,10 +76,19 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{route('class.list')}}">
+                <i class="fa-solid fa-chalkboard"></i>
+                    <span>Class</span></a>
+            </li>
+
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('institute.list')}}">
                     <i class="fa-solid fa-school"></i>
                     <span>Institute</span></a>
             </li>
+
+            
 
             <li class="nav-item">
                 <a class="nav-link" href="{{route('tuition.list')}}">

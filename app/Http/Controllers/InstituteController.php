@@ -18,7 +18,7 @@ class InstituteController extends Controller
         //dd($request->all());
         Institute::create([
             'name'=>$request->institute_name,//table name, request, form name property
-            'dept_name'=>$request->department_name,
+            // 'dept_name'=>$request->department_name,
             'location'=>$request->location
         ]);
             return redirect()->route('institute.list'); 

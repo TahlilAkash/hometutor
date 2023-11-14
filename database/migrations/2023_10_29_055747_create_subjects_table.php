@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-            $table->string('class',30);
-            $table->string('study_hours',30);
+            $table->string('name',20);
+            // $table->string('code',10);
+            $table->string('description');
+            // $table->string('class',30);
+            // $table->string('study_hours',30);
             $table->timestamps();
         });
     }

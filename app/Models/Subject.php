@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     use HasFactory;
-    protected $fillable=[
-        'name','class','study_hours'
+    protected $guarded=[
+        
     ];
     
 }

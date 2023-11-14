@@ -7,7 +7,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Institute_Name</th>
-      <th scope="col">Department_Name</th>
+      <!-- <th scope="col">Institute Logo</th> -->
       <th scope="col">Location</th>
       <th scope="col">Action</th>
     </tr>
@@ -17,7 +17,7 @@
     @foreach($institutes as $institute)
       <th scope="row">{{$institute->id}}</th>
       <td>{{$institute->name}}</td>
-      <td>{{$institute->dept_name}}</td>
+      <!-- <td>{{$institute->dept_name}}</td> -->
       <td>{{$institute->location}}</td>
 
         <td>
