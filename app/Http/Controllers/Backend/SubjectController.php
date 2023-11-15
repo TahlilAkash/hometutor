@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SubjectController extends Controller
 {
@@ -15,11 +18,20 @@ class SubjectController extends Controller
 
     public function Create_form()
     {
+
         return view('admin.pages.subject.sub_form');
     }
     public function Store(Request $request){
-
              //    dd($request->all());
+            
+            $validate=Validator::make($request->all(),[
+                //name property of  form 
+            'subject_name'=>'required',
+            ]);
+             // validate before store
+            if($validate->fails()){
+                return redirect()->back()->withErrors($validate);
+            }
            //model mame
            // storing to the database
            Subject::create([

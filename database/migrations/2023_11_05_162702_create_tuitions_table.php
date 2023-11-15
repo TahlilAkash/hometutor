@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('tuitions', function (Blueprint $table) {
             $table->id();
             $table->integer('subject_id');
-            $table->string('tuition_type',20);
+            // $table->string('tuition_type',20);
+            $table->integer('classt_id');
             $table->integer('institute_id');
-            $table->integer('salary');
+            // $table->integer('salary');
             $table->timestamps();
         });
     }

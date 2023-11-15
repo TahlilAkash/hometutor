@@ -93,7 +93,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('tuition.list')}}">
                     <i class="fa-solid fa-circle-info"></i>
-                    <span>Tuition Info</span></a>
+                    <span>Tuition Type</span></a>
             </li>
 
 

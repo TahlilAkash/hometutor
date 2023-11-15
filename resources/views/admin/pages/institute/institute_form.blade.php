@@ -5,7 +5,7 @@
 @csrf
   <div class="form-group">
     <label for="">Institute Name</label>
-    <input type="text" class="form-control" id="" name="institute_name" placeholder="Enter Institute Name">
+    <input requiredph type="text" class="form-control" id="" name="institute_name" placeholder="Enter Institute Name">
   </div>
 
   <!-- <div class="form-group">

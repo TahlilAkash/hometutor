@@ -8,9 +8,10 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Subject Name</th>
-      <th scope="col">Tuition Type</th>
+      <!-- <th scope="col">Tuition Type</th> -->
+      <th scope="col">Class Name</th>
       <th scope="col">Institute Name</th>
-      <th scope="col">Salary</th>
+      <!-- <th scope="col">Salary</th> -->
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -23,9 +24,11 @@
 
       <td>{{$tuition->subject->name}}</td>
       <!-- objects---relation--table column  if not obj--column -->
-      <td>{{$tuition->tuition_type}}</td>
+      <td>{{$tuition->classt->name}}</td>
+
+      <!-- <td>{{$tuition->tuition_type}}</td> -->
       <td>{{$tuition->institute->name}}</td>
-      <td>{{$tuition->salary}} .BDT</td>
+      <!-- <td>{{$tuition->salary}} .BDT</td> -->
       <td>
         <a href="" class="btn btn-success">Edit</a>
         <a href="" class="btn btn-danger">Delete</a>

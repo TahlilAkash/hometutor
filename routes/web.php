@@ -1,14 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\SubjectController;
-use App\Http\Controllers\TclassController;
-use App\Http\Controllers\InstituteController;
-use App\Http\Controllers\TuitionController;
+use App\Http\Controllers\Backend\StudentController;
+use App\Http\Controllers\Backend\TeacherController;
+use App\Http\Controllers\Backend\SubjectController;
+use App\Http\Controllers\Backend\TclassController;
+use App\Http\Controllers\Backend\InstituteController;
+use App\Http\Controllers\Backend\TuitionController;
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +21,23 @@ use App\Http\Controllers\TuitionController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
-Route::get('/admin/login', [UserController::class, 'loginForm'])->name('admin.login');
+
+
+
+
+
+
+Route::group(['prefix'=>'admin'],function(){
+// admin
+Route::get('/login', [UserController::class, 'loginForm'])->name('admin.login');
 Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('admin.login.post');
 
 
 Route::group(['middleware' => 'auth'], function () {
     // admin
-    Route::get('/admin/logout',[UserController::class, 'logout'])->name('admin.logout');
+    Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
     Route::get('/', [HomeController::class, 'Home'])->name('admin.dashboard');
 
     // user
@@ -62,7 +72,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/tuition/store', [TuitionController::class, 'Tuition_store'])->name('tuition.store');
 });
 
-
+});
 
 //Route::get('/about',[AboutController::class,'AboutPage'])->name(aboutpage);
 

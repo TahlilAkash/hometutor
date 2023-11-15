@@ -7,7 +7,7 @@
     @csrf
     <div class="form-group">
       <label for="">Subject Name</label>
-      <input type="text" class="form-control" id="" name="subject_name" placeholder="Enter Subject Name">
+      <input required type="text" class="form-control" id="" name="subject_name" placeholder="Enter Subject Name">
     </div>
 
     <!-- <div class="form-group">

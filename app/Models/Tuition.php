@@ -20,4 +20,9 @@ class Tuition extends Model
         return $this->belongsTo(Institute::class);
     }
 
+    public function classt() //mothod
+    {
+        return $this->belongsTo(Classt::class);
+    
+    }
 }
