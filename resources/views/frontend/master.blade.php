@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+  
     <title>Home</title>
     <meta charset="utf-8">
+    @notifyCss
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/tutor/fonts/icomoon/style.css">
@@ -79,10 +81,12 @@
             }(w, d, "zarazData", "script");
         })(window, document);
     </script> -->
+   
 </head>
 
 <body>
     <div class="site-wrap" id="home-section">
+        
         <div class="site-mobile-menu site-navbar-target">
             <div class="site-mobile-menu-header">
                 <div class="site-mobile-menu-close mt-3">
@@ -95,7 +99,7 @@
 
 
         <!-- header -->
-
+        
         @include('frontend.partial.header')
 
 
@@ -103,7 +107,7 @@
 
 
         <!-- breif  section -->
-        <div class="site-section bg-light pb-0">
+        <!-- <div class="site-section bg-light pb-0">
             <div class="container">
                 <div class="row align-items-stretch overlap">
                     <div class="col-lg-8">
@@ -137,14 +141,14 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-center mb-2">
-                                <div class="img"><img src="https://preview.colorlib.com/theme/tutor/images/img_3.jpg.webp" class="img-fluid" alt="Image"></div>
+                                
                                 <div class="text">
                                     <a href="#" class="category">Tutorial</a>
                                     <h3><a href="#">Learning React Native</a></h3>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
-                                <div class="img"><img src="https://preview.colorlib.com/theme/tutor/images/img_4.jpg.webp" class="img-fluid" alt="Image"></div>
+                                <div class="img"><img src="https://preview.colorlib.com/theme/tutor/images/img_2.jpg.webp" class="img-fluid" alt="Image"></div>
                                 <div class="text">
                                     <a href="#" class="category">Tutorial</a>
                                     <h3><a href="#">Learning React Native</a></h3>
@@ -154,12 +158,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div> -->
+        <!-- end breif  section -->
         
-
-
-
 
         <!-- <div class="site-section">
             <div class="container">
@@ -339,18 +340,26 @@
                 </div>
             </div>
         </div> -->
-
+        
         <div class="site-section bg-light">
+        
+            @include('notify::components.notify')
+            @yield('content')
+             
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-7 text-center mb-5">
                         <div class="heading">
-                            <span class="caption">Testimonials</span>
-                            <h2>Student Reviews</h2>
+                            <span class="caption">Welcome To Tuition Management Site</span>
+                            <!-- <h2>Student Reviews</h2> -->
                         </div>
                     </div>
                 </div>
+
+                
+                
                 <div class="row">
+                    
                     <div class="col-lg-4 mb-4 mb-lg-0">
                         <div class="testimonial-2">
                             <h3 class="h5">Excellent Teacher!</h3>
@@ -385,6 +394,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-lg-4 mb-4 mb-lg-0">
                         <div class="testimonial-2">
                             <h3 class="h5">Easy to Understand!</h3>
@@ -513,6 +523,7 @@
         gtag('config', 'UA-23581568-13');
     </script> -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"82616af81b204e9e","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
+    @notifyJs
 </body>
 
 </html>

@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\SubjectController;
 use App\Http\Controllers\Backend\TclassController;
 use App\Http\Controllers\Backend\InstituteController;
 use App\Http\Controllers\Backend\TuitionController;
+
+use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 
 /*
@@ -21,13 +23,19 @@ use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//web site home page
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 
+Route::get('/registration',[MemberController::class,'registration'])->name('member.registration');
+Route::post('/registration',[MemberController::class, 'store'])->name('member.store');
 
+Route::get('/login',[MemberController::class, 'login'])->name('member.login');
+Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login');
 
-
-
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
+});
 
 Route::group(['prefix'=>'admin'],function(){
 // admin
