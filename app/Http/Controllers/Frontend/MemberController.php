@@ -47,7 +47,7 @@ class MemberController extends Controller
             return redirect()->back();
         }
 
-        $credentials = $request->except('_token');
+        $credentials = $request->except('_tokgen');
         // dd($credentials);
 
         if (auth()->attempt($credentials)) {

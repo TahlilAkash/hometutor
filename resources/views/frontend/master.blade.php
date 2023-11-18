@@ -81,7 +81,6 @@
             }(w, d, "zarazData", "script");
         })(window, document);
     </script> -->
-   
 </head>
 
 <body>
@@ -347,18 +346,22 @@
             @yield('content')
              
             <div class="container">
-                <div class="row justify-content-center">
+
+                <!-- welcome title  home blade e included-->
+                <!-- <div class="row justify-content-center">
                     <div class="col-lg-7 text-center mb-5">
                         <div class="heading">
                             <span class="caption">Welcome To Tuition Management Site</span>
-                            <!-- <h2>Student Reviews</h2> -->
+                            
                         </div>
                     </div>
-                </div>
+                </div> -->
+                 <!-- end of welcome title  home blade e included-->
 
                 
-                
-                <div class="row">
+                <!-- cart gula -->
+
+                <!-- <div class="row">
                     
                     <div class="col-lg-4 mb-4 mb-lg-0">
                         <div class="testimonial-2">
@@ -411,7 +414,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+                <!-- end of cart -->
             </div>
         </div>
 

@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\InstituteController;
 use App\Http\Controllers\Backend\TuitionController;
 
 use App\Http\Controllers\Frontend\MemberController;
+use App\Http\Controllers\Frontend\PostController;
+
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 
 /*
@@ -35,6 +37,10 @@ Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
+
+    // member post create to the website 
+    Route::get('/member/post',[PostController::class,'memberpost'])->name('member.create.tuition.post');
+    Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
 });
 
 Route::group(['prefix'=>'admin'],function(){
