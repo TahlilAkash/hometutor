@@ -28,6 +28,8 @@
 
         </div>
 
+        
+
         <div class="form-group">
             <label for="">Class List </label>
             <select required class="form-control" name="class_list" id="">
@@ -53,12 +55,19 @@
             <label for="">Contact: </label>
             <input type="tel" name="contact" class="form-control" id="" placeholder="Contact">
         </div>
+        
+        <div class="form-group">
+            <label for="">Salary: </label>
+            <input required type="number" name="salary" class="form-control" id="" placeholder="Salary">
+        </div>
 
 
         <div class="form-group">
             <label for="">Address:</label>
             <textarea class="form-control" name="address" id="" cols="15" rows="5"></textarea>
         </div>
+
+        
 
 
         <div class="form-group">

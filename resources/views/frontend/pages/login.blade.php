@@ -3,8 +3,18 @@
 
 @section('content')
 
-<div class="container">
+<div class="container col-3">
+<!-- @include('notify::components.notify') -->
+
+<div>
+    @if(Session::has('success'))
+    <div class="alert alert-success">
+        {{Session::get('success')}}
+    </div>
+    @endif
+</div>
     <form action="{{route('member.do.login')}}" method=post>
+    
         @csrf
 
 

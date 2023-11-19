@@ -342,7 +342,7 @@
         
         <div class="site-section bg-light">
         
-            @include('notify::components.notify')
+            
             @yield('content')
              
             <div class="container">

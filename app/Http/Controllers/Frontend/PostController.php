@@ -20,6 +20,7 @@ class PostController extends Controller
             'email' => 'required', // name property of the form
             'class_list' => 'required',
             'subject_name'=> 'required',
+            'salary'=>'required',
             'contact'=> 'required',
         ]);
 
@@ -43,8 +44,10 @@ class PostController extends Controller
                 'name'=>$request->name, // feild name --request --name property
                 'role'=>$request->role,
                 'email'=>$request->email,
+                // 'salary'=>$request->salary,
                 'class_list'=>$request->class_list,
                 'subject_name'=>$request->subject_name,
+                'salary'=>$request->salary,
                 'contact'=>$request->contact,
                 'address'=>$request->address,
                 'image'=>$fileName,

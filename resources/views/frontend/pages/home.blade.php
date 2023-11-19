@@ -36,8 +36,10 @@
                         <h6>Name: {{$tpost->name}}</h6>                       
                         <h6>Role: {{$tpost->role}}</h6>
                         <h6>Email Address: {{$tpost->email}}</h6>
+                        <!-- <h6>Salary: {{$tpost->salary}}</h6> -->
                         <h6>Class: {{$tpost->class_list}}</h6>
                         <h6>Subject: {{$tpost->subject_name}}</h6>
+                        <h6>Salary: {{$tpost->salary}} .BDT</h6>
                         <h6>Contact: {{$tpost->contact}}</h6>
                         <a class="btn btn-primary" href="#" role="button">Apply</a>
                         

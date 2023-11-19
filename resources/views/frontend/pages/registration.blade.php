@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<div class="container col-3  ">
   <form action="{{route('member.store')}}" method="post">
-
+  @include('notify::components.notify')
     @csrf
     <div class="form-group ">
       <label for="name">Name:</label>

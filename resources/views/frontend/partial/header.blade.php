@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <header class="site-navbar light site-navbar-target" role="banner">
     <div class="container">
         <div class="row align-items-center position-relative">
@@ -45,3 +53,6 @@
         </div>
     </div>
 </div>
+
+</body>
+</html>

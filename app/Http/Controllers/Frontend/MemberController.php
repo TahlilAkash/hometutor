@@ -35,7 +35,8 @@ class MemberController extends Controller
     }
 
     public function doLogin(Request $request)
-    {
+    {   
+        // dd($request->all());
 
         $val = Validator::make($request->all(), [
             'email' => 'required',
@@ -47,12 +48,12 @@ class MemberController extends Controller
             return redirect()->back();
         }
 
-        $credentials = $request->except('_tokgen');
+        $credentials = $request->except('_token');
         // dd($credentials);
 
         if (auth()->attempt($credentials)) {
-            notify()->success('Login Success.');
-            return redirect()->route('home');
+            return redirect()->route('home')->with('success','You have login successfully');
+            // return redirect()->route('home');
         }
 
         notify()->error('Invalid Credentials.');
