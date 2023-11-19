@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function home()
     {
         $tuitionposts=TuitionPost::all();
-        return view('frontend.pages.home',compact('tuitionposts'));
+        return view('frontend.partial.homeDashboard',compact('tuitionposts'));
        
     }
     

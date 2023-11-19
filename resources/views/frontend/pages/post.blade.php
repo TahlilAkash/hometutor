@@ -14,11 +14,11 @@
         </div>
 
         <div class="form-group">
-            <label for="">Select Role:</label>
+            <label for="">Role:</label>
             <select required class="form-control" name="role" id="">
 
                 <option value="tutor">Tutor</option>
-                <option value="student">Student</option>
+                <!-- <option value="student">Student</option> -->
             </select>
         </div>
 

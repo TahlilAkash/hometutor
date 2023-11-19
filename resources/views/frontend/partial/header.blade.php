@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<header class="site-navbar light site-navbar-target" role="banner">
+
+<header class="site-navbar black site-navbar-target h-25" role="banner">
     <div class="container">
         <div class="row align-items-center position-relative">
             <div class="col-3">
@@ -33,6 +26,8 @@
 
                         <li><a href="{{route('member.create.tuition.post')}}" class="nav-link">Create Tuition Post</a></li>
 
+                        <li><a href=" " class="nav-link"> </a></li>
+
                         <li><a href="" class="nav-link">About</a></li>
                         <li><a href="" class="nav-link">Contact</a></li>
                     </ul>
@@ -44,7 +39,7 @@
 </header>
 
 
-<div class="site-section-cover overlay" style="background-color:#303030">
+<!-- <div class="site-section-cover overlay h-25" style="background-color:#303030; height:50%">
     <div class="container">
         <div class="row align-items-center justify-content-center" >
             <div class="col-lg-10 text-center">
@@ -52,7 +47,4 @@
             </div>
         </div>
     </div>
-</div>
-
-</body>
-</html>
+</div> -->
