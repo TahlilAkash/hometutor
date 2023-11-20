@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         // $tuitionposts=TuitionPost::all();
 
-        $tuitionposts = TuitionPost::where('role' , '=', 'tutor')->get();
+        $tuitionposts = TuitionPost::where('role' , '=', 'tuitor')->get();
 
         $studentposts = TuitionPost::where('role' , '=', 'student')->get();
         //dd( $studentposts->toarray());

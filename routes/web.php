@@ -77,11 +77,21 @@ Route::group(['middleware' => 'auth'], function () {
 
     // subject
     Route::get('/subject/list', [SubjectController::class, 'Subject'])->name('subject.list');
+    
+    Route::get('/subject/delete/{id}', [SubjectController::class, 'delete'])->name('subject.delete');
+    Route::get('/subject/edit/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
+    Route::put('/subject/update/{id}', [SubjectController::class, 'update'])->name('subject.update');
+
     Route::get('/subject/form', [SubjectController::class, 'Create_form'])->name('subject_create.form');
     Route::post('/subject/store', [SubjectController::class, 'Store'])->name('subject.store');
 
     //class
     Route::get('/class/list', [TclassController::class, 'Class_list'])->name('class.list');
+
+    Route::get('/class/delete/{id}', [TclassController::class, 'delete'])->name('class.delete');
+    Route::get('/class/edit/{id}', [TclassController::class, 'edit'])->name('class.edit');
+    Route::put('/class/update/{id}', [TclassController::class, 'update'])->name('class.update');
+
     Route::get('/class/form', [TclassController::class, 'Create_form'])->name('class.form');
     Route::post('/class/store', [TclassController::class, 'store_form'])->name('class.store');
 

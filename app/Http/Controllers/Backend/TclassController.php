@@ -8,6 +8,48 @@ use Illuminate\Http\Request;
 
 class TclassController extends Controller
 {
+    // delete
+    public function delete($id)
+    {
+        // dd($id);
+        
+        $classt=Classt::find($id);
+        if($classt)
+        {
+              $classt->delete();
+        }
+      
+        notify()->success('Class Deleted Successfully.');
+        return redirect()->back();
+          
+    }
+    // edit means just view
+    public function edit($id)
+    {
+        $classt=Classt::find($id);
+        // dd($subject);
+        return view('admin.pages.classt.edit_class',compact('classt'));// Classt Model is assigned to classt variable
+            
+    }
+
+    //update
+    public function update(Request $request,$id){
+        $classt=Classt::find($id);
+
+          $classt->update([
+                'name'=>$request->class_name,
+                'description'=>$request->description
+                
+          ]);
+
+          notify()->success('class updated successfully.');
+          return redirect()->back();  
+          
+        
+        } 
+
+    
+    
     public function Class_list(){
         //retrive from database
         $classts=Classt::all();// table name -- model name

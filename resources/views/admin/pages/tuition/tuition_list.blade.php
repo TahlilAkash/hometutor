@@ -20,7 +20,7 @@
 
     <tr>
       <th scope="row">{{$key+1}}</th>
-      <!-- <th scope="row">{{$tuition->id}}</th> -->
+      {{-- <th scope="row">{{$tuition->id}}</th> --}}
 
       <td>{{$tuition->subject->name}}</td>
       <!-- objects---relation--table column  if not obj--column -->

@@ -19,16 +19,16 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($subjects as $subject)
+        @foreach($subjects as $key=>$subject)
         <tr>
-        <th scope="row">{{$subject->id}}</th>
+        <th scope="row">{{$key+1}}</th>
         <!-- form name property -->
         <td>{{$subject->name}}</td>       
         <!-- <td>{{$subject->code}}</td> -->
         <td>{{$subject->description}}</td>
         <td>
-            <a href="" class="btn btn-success">Edit</a>
-            <a href="" class="btn btn-danger">Delete</a>
+            <a href="{{route('subject.edit',$subject->id)}}" class="btn btn-success">Edit</a>
+            <a href="{{route('subject.delete',$subject->id)}}" class="btn btn-danger">Delete</a>
         </td>
         </tr>
         @endforeach

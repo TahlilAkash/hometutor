@@ -3,8 +3,9 @@
 @section('content')
 
 <div class="container">
-    <form action="{{route('class.store')}}" method="post">
+    <form action="{{route('class.update',$classt->id)}}" method="post">
         @csrf
+        @method('put')
         <div class="form-group">
             <label for="">Class Name</label>
             {{-- <select required class="form-control" name="class_name" id="" placeholder="Enter the Class">
@@ -21,13 +22,13 @@
             </select> --}}
             
                 
-            <input required type="text" class="form-control" id="" name="class_name" placeholder="Enter Class Name">
+            <input value="{{$classt->name}}" required type="text" class="form-control" id="" name="class_name" placeholder="Enter Class Name">
         </div>
         
 
         <div class="form-group">
             <label for="">Enter Description:</label>
-            <textarea class="form-control" placeholder="Enter Class description" name="class_description" id="" cols="30" rows="5"></textarea>
+            <textarea class="form-control" placeholder="Enter Class description" name="description" id="" cols="30" rows="5">{{$classt->description}}</textarea>
         </div>
 
 

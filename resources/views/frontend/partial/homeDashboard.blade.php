@@ -46,7 +46,13 @@
                     <div class="col-lg-4 mb-4 mb-lg-0 " >
                         <div class="testimonial-2 mb-4">
                             
-                            <h3 class="h5">Tuition!</h3>
+                            {{-- <h3 class="h5">Tuition!</h3> --}}
+                            @if($tpost->role=='student')
+                            <h3 class="h5">Need tuitor !</h3>
+                            @else 
+
+                            <h3 class="h5">Need Tuition</h3>
+                            @endif
 
                             <div class="d-flex v-card align-items-center">
                                 <img src="{{url('/uploads/'.$tpost->image)}}" alt="Image" class="img-fluid mr-3">
@@ -87,7 +93,13 @@
                         <div class="col-lg-4 mb-4 mb-lg-0 " >
                             <div class="testimonial-2 mb-3">
                                 
-                                <h3 class="h5">Tuition !</h3>
+                                {{-- <h3 class="h5">Tuition !</h3> --}}
+                                @if($spost->role=='student')
+                                <h3 class="h5">Need tuitor !</h3>
+                                @else 
+    
+                                <h3 class="h5">Need Tuition</h3>
+                                @endif
 
                                 <div class="d-flex v-card align-items-center">
                                     <img src="{{url('/uploads/'.$spost->image)}}" alt="Image" class="img-fluid mr-3">
