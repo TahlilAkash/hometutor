@@ -7,13 +7,13 @@ use App\Models\TuitionPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class PostController extends Controller
+class StudentpostController extends Controller
 {
-    public function teacherpost(){
-        return view('frontend.pages.post');
+    public function studentpost(){
+        return view('frontend.pages.studentpost');
     }
 
-    public function store(Request $request)
+    public function studentpoststore(Request $request)
     {
         // 
         $val = Validator::make($request->all(), [
@@ -55,6 +55,5 @@ class PostController extends Controller
             ]);
         return redirect()->route('home');
     }
-
 
 }

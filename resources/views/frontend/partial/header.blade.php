@@ -24,9 +24,9 @@
                         <li><a href="{{route('member.logout')}}" class="nav-link">Log Out</a></li>
                         @endauth
 
-                        <li><a href="{{route('member.create.tuition.post')}}" class="nav-link">Create Tuition Post</a></li>
+                        <li><a href="{{route('teacher.create.tuition.post')}}" class="nav-link">Create Tuition</a></li>
 
-                        <li><a href=" " class="nav-link"> </a></li>
+                        <li><a href="{{route('student.create.tuition.post')}}" class="nav-link">Need Tutor</a></li>
 
                         <li><a href="" class="nav-link">About</a></li>
                         <li><a href="" class="nav-link">Contact</a></li>

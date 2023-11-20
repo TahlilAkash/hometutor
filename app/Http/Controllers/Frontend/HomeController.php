@@ -11,8 +11,13 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $tuitionposts=TuitionPost::all();
-        return view('frontend.partial.homeDashboard',compact('tuitionposts'));
+        // $tuitionposts=TuitionPost::all();
+
+        $tuitionposts = TuitionPost::where('role' , '=', 'tutor')->get();
+
+        $studentposts = TuitionPost::where('role' , '=', 'student')->get();
+        //dd( $studentposts->toarray());
+        return view('frontend.partial.homeDashboard',compact('studentposts', 'tuitionposts'));
        
     }
     

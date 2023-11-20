@@ -4,7 +4,7 @@
 
 <div class="container">
     <!-- enctype="multipart/form-data" -->
-    <form action="{{route('teacher.tuition.post.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('student.tuition.post.store')}}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -17,7 +17,7 @@
             <label for="">Role:</label>
             <select required class="form-control" name="role" id="">
 
-                <option value="tutor">Tutor</option>
+                <option value="student">Student</option>
                 <!-- <option value="student">Student</option> -->
             </select>
         </div>

@@ -11,7 +11,9 @@ use App\Http\Controllers\Backend\InstituteController;
 use App\Http\Controllers\Backend\TuitionController;
 
 use App\Http\Controllers\Frontend\MemberController;
-use App\Http\Controllers\Frontend\PostController;
+
+use App\Http\Controllers\Frontend\PostController;//teacher post
+use App\Http\Controllers\Frontend\StudentpostController;// student post
 
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 
@@ -38,9 +40,13 @@ Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
 
-    // member post create to the website 
-    Route::get('/member/post',[PostController::class,'memberpost'])->name('member.create.tuition.post');
-    Route::post('/member/post/store',[PostController::class,'store'])->name('member.post.store');
+    // teacher post to the website
+    Route::get('/teacher/post',[PostController::class,'teacherpost'])->name('teacher.create.tuition.post');
+    Route::post('/teacher/post/store',[PostController::class,'store'])->name('teacher.tuition.post.store');
+
+    // student post to the website
+    Route::get('/student/post',[StudentpostController::class,'studentpost'])->name('student.create.tuition.post');
+    Route::post('/student/post/store',[StudentpostController::class,'studentpoststore'])->name('student.tuition.post.store');
 });
 
 Route::group(['prefix'=>'admin'],function(){
