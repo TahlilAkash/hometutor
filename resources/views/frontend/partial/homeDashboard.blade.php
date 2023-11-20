@@ -42,11 +42,11 @@
             </div>
         <div class="row ">
             @foreach ($tuitionposts as $tpost)
-                
+                <a href="{{route('s_t.post.singleview',$tpost->id)}}">
                     <div class="col-lg-4 mb-4 mb-lg-0 " >
                         <div class="testimonial-2 mb-4">
                             
-                            <h3 class="h5">Need Tuition !</h3>
+                            <h3 class="h5">Tuition!</h3>
 
                             <div class="d-flex v-card align-items-center">
                                 <img src="{{url('/uploads/'.$tpost->image)}}" alt="Image" class="img-fluid mr-3">
@@ -69,7 +69,7 @@
                             
                         </div>
                     </div>
-                
+                </a>
             @endforeach   
         </div>
         
@@ -83,34 +83,34 @@
         {{-- Student Post --}}
         <div class="row ">
             @foreach ($studentposts as $spost)
-                
-                    <div class="col-lg-4 mb-4 mb-lg-0 " >
-                        <div class="testimonial-2 mb-3">
-                            
-                            <h3 class="h5">Need Tutor !</h3>
+                <a href="{{route('s_t.post.singleview',$spost->id)}}">
+                        <div class="col-lg-4 mb-4 mb-lg-0 " >
+                            <div class="testimonial-2 mb-3">
+                                
+                                <h3 class="h5">Tuition !</h3>
 
-                            <div class="d-flex v-card align-items-center">
-                                <img src="{{url('/uploads/'.$spost->image)}}" alt="Image" class="img-fluid mr-3">
+                                <div class="d-flex v-card align-items-center">
+                                    <img src="{{url('/uploads/'.$spost->image)}}" alt="Image" class="img-fluid mr-3">
+                                </div>
+                                <h6>Name: {{$spost->name}}</h6>                       
+                                <h6>Role: {{$spost->role}}</h6>
+                                <h6>Email Address: {{$spost->email}}</h6>
+                                
+                                <h6>Class: {{$spost->class_list}}</h6>
+                                <h6>Subject: {{$spost->subject_name}}</h6>
+                                <h6>Salary: {{$spost->salary}} .BDT</h6>
+                                <h6>Contact: {{$spost->contact}}</h6>
+                                <a class="btn btn-primary" href="#" role="button">Apply</a>
+                                
+                                {{-- <blockquote class="mb-4">
+                                <p>Class: {{$tpost->class_lits}}</p>
+                                </blockquote> --}}
+                                
+
+                                
                             </div>
-                            <h6>Name: {{$spost->name}}</h6>                       
-                            <h6>Role: {{$spost->role}}</h6>
-                            <h6>Email Address: {{$spost->email}}</h6>
-                            
-                            <h6>Class: {{$spost->class_list}}</h6>
-                            <h6>Subject: {{$spost->subject_name}}</h6>
-                            <h6>Salary: {{$spost->salary}} .BDT</h6>
-                            <h6>Contact: {{$spost->contact}}</h6>
-                            <a class="btn btn-primary" href="#" role="button">Apply</a>
-                            
-                            {{-- <blockquote class="mb-4">
-                            <p>Class: {{$tpost->class_lits}}</p>
-                            </blockquote> --}}
-                            
-
-                            
                         </div>
-                    </div>
-                
+                </a>
             @endforeach   
         </div>
            
