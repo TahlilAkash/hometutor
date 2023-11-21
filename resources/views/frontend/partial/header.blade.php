@@ -22,7 +22,8 @@
                         @endguest
 
                         @auth
-                        <li><a href="{{route('member.logout')}}" class="nav-link">Log Out</a></li>
+                        <li><a href="{{route('member.logout')}}" class="nav-link">Log Out</a>|</li>
+                        <li> <a href="{{route('profile.view')}}" class="nav-link"> {{auth()->user()->name}} ({{ auth()->user()->role }}) </li>
                         @endauth
 
                         <li><a href="{{route('teacher.create.tuition.post')}}" class="nav-link">Create Tuition</a></li>

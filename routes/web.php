@@ -38,6 +38,8 @@ Route::get('/login',[MemberController::class, 'login'])->name('member.login');
 Route::post('/login',[MemberController::class,'doLogin'])->name('member.do.login');
 
 Route::group(['middleware'=>'auth'],function(){
+
+    Route::get('/profile', [MemberController::class, 'profile'])->name('profile.view'); // member profile view
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
 
     // teacher post to the website
@@ -59,50 +61,53 @@ Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('adm
 
 
 Route::group(['middleware' => 'auth'], function () {
-    // admin
-    Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
-    Route::get('/', [HomeController::class, 'Home'])->name('admin.dashboard');
+    Route::group(['middleware' => 'checkAdmin'], function () {    
+        // admin
+        Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
+        Route::get('/', [HomeController::class, 'Home'])->name('admin.dashboard');
 
-    // user
-    Route::get('/users',[UserController::class, 'list'])->name('user.list');
-    Route::get('/users/create',[UserController::class, 'createForm'])->name('users.Formcreate');
-    Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
+        // user
+        Route::get('/users',[UserController::class, 'list'])->name('user.list');
+        Route::get('/users/create',[UserController::class, 'createForm'])->name('users.Formcreate');
+        Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
 
 
-    Route::get('/studentlist', [StudentController::class, 'Studentlist'])->name('student.list');
-    Route::get('/student/advertisement', [StudentController::class, 'Student_Adv'])->name('student.post');
+        Route::get('/studentlist', [StudentController::class, 'Studentlist'])->name('student.list');
+        Route::get('/student/advertisement', [StudentController::class, 'Student_Adv'])->name('student.post');
 
-    Route::get('/teacherlist', [TeacherController::class, 'Teacherlist'])->name('teacher.list');
-    Route::get('/teacher/advertisement', [TeacherController::class, 'T_adv'])->name('teacher.post');
+        Route::get('/teacherlist', [TeacherController::class, 'Teacherlist'])->name('teacher.list');
+        Route::get('/teacher/advertisement', [TeacherController::class, 'T_adv'])->name('teacher.post');
 
-    // subject
-    Route::get('/subject/list', [SubjectController::class, 'Subject'])->name('subject.list');
+        // subject
+        Route::get('/subject/list', [SubjectController::class, 'Subject'])->name('subject.list');
+        
+        Route::get('/subject/delete/{id}', [SubjectController::class, 'delete'])->name('subject.delete');
+        Route::get('/subject/edit/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
+        Route::put('/subject/update/{id}', [SubjectController::class, 'update'])->name('subject.update');
+
+        Route::get('/subject/form', [SubjectController::class, 'Create_form'])->name('subject_create.form');
+        Route::post('/subject/store', [SubjectController::class, 'Store'])->name('subject.store');
+
+        //class
+        Route::get('/class/list', [TclassController::class, 'Class_list'])->name('class.list');
+
+        Route::get('/class/delete/{id}', [TclassController::class, 'delete'])->name('class.delete');
+        Route::get('/class/edit/{id}', [TclassController::class, 'edit'])->name('class.edit');
+        Route::put('/class/update/{id}', [TclassController::class, 'update'])->name('class.update');
+
+        Route::get('/class/form', [TclassController::class, 'Create_form'])->name('class.form');
+        Route::post('/class/store', [TclassController::class, 'store_form'])->name('class.store');
+
+        // institute
+        Route::get('/institute/list', [InstituteController::class, 'Institute_li'])->name('institute.list');
+        Route::get('/institute/form', [InstituteController::class, 'Institute_form'])->name('institute.form');
+        Route::post('/institute/store', [InstituteController::class, 'Institute_store'])->name('institute.store');
+
+        Route::get('/tuition/list', [TuitionController::class, 'Tuition_list'])->name('tuition.list');
+        Route::get('/tuition/form', [TuitionController::class, 'Tuition_form'])->name('tuition.form');
     
-    Route::get('/subject/delete/{id}', [SubjectController::class, 'delete'])->name('subject.delete');
-    Route::get('/subject/edit/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
-    Route::put('/subject/update/{id}', [SubjectController::class, 'update'])->name('subject.update');
-
-    Route::get('/subject/form', [SubjectController::class, 'Create_form'])->name('subject_create.form');
-    Route::post('/subject/store', [SubjectController::class, 'Store'])->name('subject.store');
-
-    //class
-    Route::get('/class/list', [TclassController::class, 'Class_list'])->name('class.list');
-
-    Route::get('/class/delete/{id}', [TclassController::class, 'delete'])->name('class.delete');
-    Route::get('/class/edit/{id}', [TclassController::class, 'edit'])->name('class.edit');
-    Route::put('/class/update/{id}', [TclassController::class, 'update'])->name('class.update');
-
-    Route::get('/class/form', [TclassController::class, 'Create_form'])->name('class.form');
-    Route::post('/class/store', [TclassController::class, 'store_form'])->name('class.store');
-
-    // institute
-    Route::get('/institute/list', [InstituteController::class, 'Institute_li'])->name('institute.list');
-    Route::get('/institute/form', [InstituteController::class, 'Institute_form'])->name('institute.form');
-    Route::post('/institute/store', [InstituteController::class, 'Institute_store'])->name('institute.store');
-
-    Route::get('/tuition/list', [TuitionController::class, 'Tuition_list'])->name('tuition.list');
-    Route::get('/tuition/form', [TuitionController::class, 'Tuition_form'])->name('tuition.form');
-    Route::post('/tuition/store', [TuitionController::class, 'Tuition_store'])->name('tuition.store');
+        Route::post('/tuition/store', [TuitionController::class, 'Tuition_store'])->name('tuition.store');
+    });    
 });
 
 });

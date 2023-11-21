@@ -13,6 +13,14 @@ class MemberController extends Controller
     {
         return view('frontend.pages.registration');
     }
+    
+    // profile view
+    public function profile()
+    {
+        return view('frontend.pages.profile');
+    }
+
+
 
     public function store(Request $request)
     {
