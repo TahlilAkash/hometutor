@@ -4,6 +4,7 @@
 
 <form action="{{route('tuition.store')}}"method="post">
     @csrf
+    
     <div class="form-group">
         <label for="">Select Subject:</label>
         <select required class="form-control" name="subject_id" id="">

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Classt;
+use App\Models\Subject;
 use App\Models\TuitionPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -10,7 +12,10 @@ use Illuminate\Support\Facades\Validator;
 class StudentpostController extends Controller
 {
     public function studentpost(){
-        return view('frontend.pages.studentpost');
+        
+        $subjects=Subject::all();
+        $classts=Classt::all();
+        return view('frontend.pages.studentpost',compact('subjects','classts'));
     }
 
     public function studentpoststore(Request $request)

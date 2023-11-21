@@ -32,7 +32,7 @@
 
         <div class="form-group">
             <label for="">Class List </label>
-            <select required class="form-control" name="class_list" id="">
+            {{-- <select required class="form-control" name="class_list" id="">
 
                 <option value="Four">Four</option>
                 <option value="Five">Five</option>
@@ -43,12 +43,30 @@
                 <option value="Ten">Ten</option>
                 <option value="Eleven">Eleven</option>
                 <option value="Twelve">Twelve</option>
+            </select> --}}
+            <select required class="form-control" name="class_list" id="">
+                <option style="display: none" >--select class--</option>
+                <!-- select option from subject table -->
+
+                @foreach ($classts as $classt)
+                 {{-- teacher post controller theke jaa pathaisi=$classts --}}
+                <option value="{{$classt->name}}">{{$classt->name}}</option>
+                @endforeach
+    
             </select>
         </div>
 
         <div class="form-group">
             <label for="">Subject Name</label>
-            <input required type="text" class="form-control" id="" name="subject_name" placeholder="Enter Subject Name">
+            {{-- <input required type="text" class="form-control" id="" name="subject_name" placeholder="Enter Subject Name"> --}}
+            <select required class="form-control" name="subject_name" id="">
+                <option style="display: none" >--select subject--</option>
+                <!-- select option from subject table -->
+                @foreach ($subjects as $subject)
+                <option value="{{$subject->name}}">{{$subject->name}}</option>
+                @endforeach
+    
+            </select>
         </div>
 
         <div class="form-group">

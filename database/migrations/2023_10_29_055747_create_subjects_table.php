@@ -19,6 +19,7 @@ return new class extends Migration
             // $table->string('class',30);
             // $table->string('study_hours',30);
             $table->timestamps();
+            
         });
     }
 
