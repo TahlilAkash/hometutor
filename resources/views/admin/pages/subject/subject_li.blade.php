@@ -24,7 +24,7 @@
         <th scope="row">{{$key+1}}</th>
         <!-- form name property -->
         <td>{{$subject->name}}</td>       
-        <!-- <td>{{$subject->code}}</td> -->
+        {{-- <!-- <td>{{$subject->code}}</td> --> --}}
         <td>{{$subject->description}}</td>
         <td>
             <a href="{{route('subject.edit',$subject->id)}}" class="btn btn-success">Edit</a>

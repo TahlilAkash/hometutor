@@ -28,7 +28,7 @@
                         <h6>Subject: {{$singlepost->subject_name}}</h6>
                         <h6>Salary: {{$singlepost->salary}} .BDT</h6>
                         <h6>Contact: {{$singlepost->contact}}</h6>
-                        <a class="btn btn-primary" href="#" role="button">Apply</a>
+                        <a class="btn btn-primary" href="{{route('apply.post.now',$singlepost->id)}}" role="button">Apply</a>
                         
                         {{-- <blockquote class="mb-4">
                         <p>Class: {{$tpost->class_lits}}</p>

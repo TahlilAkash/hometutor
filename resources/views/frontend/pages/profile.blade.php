@@ -21,7 +21,7 @@
                 
                 <h5 class="mb-2 text-white">Role :{{ auth()->user()->role }}</h5>
 
-                <button type="button" class="btn btn-primary btn-rounded btn-lg text-white mb-5">
+                <button type="button" class="btn btn-primary btn-rounded btn-lg text-white mb-3">
                     Message now
                 </button>
                 {{-- <div class="d-flex justify-content-between text-center mt-5 mb-2">
@@ -43,4 +43,38 @@
     </div>
     </div>
  </div>
+
+<div class="container">
+
+    <div class="row d-flex align-items-center justify-content-center  ">
+        <div class="col-md-3">
+              <table class="text-dark table table-sm table-dark">
+                <div class="text-dark"> <h6>Applied Post</h6> </div>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Tuition Post Id</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($apply_posts as $applypost)
+                        <tr>
+                            <th scope="row">{{$applypost->id}}</th>
+                            <td>{{$applypost->created_at}}</td>
+                            <td>{{$applypost->tuition_post_id}}</td>
+                            <td>{{$applypost->status}}</td>
+                            <td>
+                              @if($applypost->status=='pending')
+                              <a class="btn btn-danger" href="{{route('apply.cancel',$applypost->id)}}">Cancel Apply</a>
+                              @endif 
+                        </tr>
+                  @endforeach  
+                </tbody>
+              </table>
+        </div>
+    </div>  
+</div>    
 @endsection

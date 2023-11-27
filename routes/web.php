@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\MemberController;
 use App\Http\Controllers\Frontend\TeacherpostController;//teacher post
 use App\Http\Controllers\Frontend\StudentpostController;// student post
 use App\Http\Controllers\Frontend\PostController; // single post view
+use App\Http\Controllers\Frontend\ApplyPostController;// apply post 
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 
 /*
@@ -42,6 +43,10 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/profile', [MemberController::class, 'profile'])->name('profile.view'); // member profile view
     Route::get('/logout',[MemberController::class, 'logout'])->name('member.logout');
 
+    // apply to the tuition post
+    Route::get('/apply-now/{tuitionPost_id}',[ApplyPostController::class,'applyNow'])->name('apply.post.now');
+    Route::get('/cancel-apply/{tuitionPost_id}',[ApplyPostController::class,'cancelApply'])->name('apply.cancel');
+
     // teacher post to the website
     Route::get('/teacher/post',[TeacherpostController::class,'teacherpost'])->name('teacher.create.tuition.post');
     Route::post('/teacher/post/store',[TeacherpostController::class,'store'])->name('teacher.tuition.post.store');
@@ -52,6 +57,9 @@ Route::group(['middleware'=>'auth'],function(){
 
     //single cart view
     Route::get('/teacher-student/post/singleview/{id}',[PostController::class,'singlePostview'])->name('s_t.post.singleview');
+
+    
+
 });
 
 Route::group(['prefix'=>'admin'],function(){

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\ApplyPost;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,13 +13,16 @@ class MemberController extends Controller
 {
     public function registration()
     {
-        return view('frontend.pages.registration');
+        // $tuition_apply=TuitionApply::all();
+        return view('frontend.pages.registration'); //,compact('tuition_apply')
     }
     
     // profile view
     public function profile()
     {
-        return view('frontend.pages.profile');
+        
+        $apply_posts=ApplyPost::where('user_id',auth()->user()->id)->get();
+        return view('frontend.pages.profile',compact('apply_posts'));
     }
 
 
@@ -60,7 +65,8 @@ class MemberController extends Controller
         // dd($credentials);
 
         if (auth()->attempt($credentials)) {
-            return redirect()->route('home')->with('success','You have login successfully');
+            notify()->success('success','You have login successfully');    
+            return redirect()->route('home');
             // return redirect()->route('home');
         }
 

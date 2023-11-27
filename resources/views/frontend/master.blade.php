@@ -6,6 +6,11 @@
     <title>Home</title>
     <meta charset="utf-8">
     @notifyCss
+    <style>
+        .notify{
+            z-index: 1000000;
+    }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://preview.colorlib.com/theme/tutor/fonts/icomoon/style.css">
@@ -84,6 +89,7 @@
 </head>
 
 <body>
+    <x-notify::notify />
     <div class="site-wrap" id="home-section">
         
         <div class="site-mobile-menu site-navbar-target">

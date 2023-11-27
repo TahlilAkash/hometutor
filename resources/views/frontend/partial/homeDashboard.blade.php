@@ -42,7 +42,7 @@
             </div>
         <div class="row ">
             @foreach ($tuitionposts as $tpost)
-                <a href="{{route('s_t.post.singleview',$tpost->id)}}">
+                {{-- <a href="{{route('s_t.post.singleview',$tpost->id)}}"> --}}
                     <div class="col-lg-4 mb-4 mb-lg-0 " >
                         <div class="testimonial-2 mb-4">
                             
@@ -65,7 +65,7 @@
                             <h6>Subject: {{$tpost->subject_name}}</h6>
                             <h6>Salary: {{$tpost->salary}} .BDT</h6>
                             <h6>Contact: {{$tpost->contact}}</h6>
-                            <a class="btn btn-primary" href="#" role="button">Apply</a>
+                            <a class="btn btn-primary" href="{{route('s_t.post.singleview',$tpost->id)}}" role="button">See More</a>
                             
                             {{-- <blockquote class="mb-4">
                             <p>Class: {{$tpost->class_lits}}</p>
@@ -75,7 +75,7 @@
                             
                         </div>
                     </div>
-                </a>
+                {{-- </a> --}}
             @endforeach   
         </div>
         
@@ -89,7 +89,7 @@
         {{-- Student Post --}}
         <div class="row ">
             @foreach ($studentposts as $spost)
-                <a href="{{route('s_t.post.singleview',$spost->id)}}">
+                {{-- <a href="{{route('s_t.post.singleview',$spost->id)}}"> --}}
                         <div class="col-lg-4 mb-4 mb-lg-0 " >
                             <div class="testimonial-2 mb-3">
                                 
@@ -112,7 +112,7 @@
                                 <h6>Subject: {{$spost->subject_name}}</h6>
                                 <h6>Salary: {{$spost->salary}} .BDT</h6>
                                 <h6>Contact: {{$spost->contact}}</h6>
-                                <a class="btn btn-primary" href="#" role="button">Apply</a>
+                                <a class="btn btn-primary" href="{{route('s_t.post.singleview',$spost->id)}}" role="button">See More</a>
                                 
                                 {{-- <blockquote class="mb-4">
                                 <p>Class: {{$tpost->class_lits}}</p>
@@ -122,7 +122,7 @@
                                 
                             </div>
                         </div>
-                </a>
+                {{-- </a> --}}
             @endforeach   
         </div>
            
