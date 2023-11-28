@@ -11,4 +11,16 @@ class TuitionPost extends Model
     protected $guarded=[
         
     ];
+    public function subject() //mothod
+    {
+        return $this->belongsTo(Subject::class);//,'subject_name'
+    }
+
+
+    public function classt() //mothod
+    {
+        return $this->belongsTo(Classt::class);
+    
+    }
+
 }

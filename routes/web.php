@@ -80,11 +80,22 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
 
 
+        // admin panel student list
         Route::get('/studentlist', [StudentController::class, 'Studentlist'])->name('student.list');
-        Route::get('/student/advertisement', [StudentController::class, 'Student_Adv'])->name('student.post');
-
+        // Route::get('/student/advertisement', [StudentController::class, 'Student_Adv'])->name('student.post');
+        Route::get('/studentlist/delete/{id}', [StudentController::class, 'delete'])->name('studentlist.delete');
+        Route::get('/studentlist/edit/{id}', [StudentController::class, 'edit'])->name('studentlist.edit');
+        Route::put('/studentlist/update/{id}',[StudentController::class, 'update'])->name('studentlist.update');
+        
+        
+        // admin panel teacher list
         Route::get('/teacherlist', [TeacherController::class, 'Teacherlist'])->name('teacher.list');
-        Route::get('/teacher/advertisement', [TeacherController::class, 'T_adv'])->name('teacher.post');
+
+        Route::get('/teacherlist/delete/{id}',[TeacherController::class,'delete'])->name('teacherlist.delete');
+        Route::get('/teacherlist/edit/{id}', [TeacherController::class, 'edit'])->name('teacherlist.edit');
+        Route::put('/teacherlist/update/{id}',[TeacherController::class, 'update'])->name('teacherlist.update');
+        // Route::get('/teacher/advertisement', [TeacherController::class, 'T_adv'])->name('teacher.post');
+       
 
         // subject
         Route::get('/subject/list', [SubjectController::class, 'Subject'])->name('subject.list');
