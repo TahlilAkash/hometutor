@@ -8,12 +8,6 @@
         @csrf
 
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input required name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
-
-        </div>
-
-        <div class="form-group">
             <label for="">Role:</label>
             <select required class="form-control" name="role" id="">
 

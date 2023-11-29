@@ -6,13 +6,6 @@
     <!-- enctype="multipart/form-data" -->
     <form action="{{route('teacher.tuition.post.store')}}" method="post" enctype="multipart/form-data">
         @csrf
-
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input required name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
-
-        </div>
-
         <div class="form-group">
             <label for="">Role:</label>
             <select required class="form-control" name="role" id="">
@@ -58,7 +51,7 @@
 
         <div class="form-group">
             <label for="">Subject Name</label>
-            {{-- <input required type="text" class="form-control" id="" name="subject_name" placeholder="Enter Subject Name"> --}}
+            
             <select required class="form-control" name="subject_name" id="">
                 <option style="display: none" >--select subject--</option>
                 <!-- select option from subject table -->

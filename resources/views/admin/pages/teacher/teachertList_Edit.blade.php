@@ -2,13 +2,24 @@
 
 @section('content')
 
-<h4> Teacher Post </h4>
+
 <div class="container">
+    <h2 class="mb-3" style="font-size: 30px">Teacher Post</h2>
     <!-- enctype="multipart/form-data" -->
     <form action="{{route('teacherlist.update',$teacherEdit->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
-
+        <h3>Admin Approval</h3><br>
+        <div class="form-group">
+            <label for="">Status</label>
+           
+            <select required class="form-control" name="status" id="">
+                <option @if($teacherEdit->status=='pending') selected @endif value="pending">Pending</option>
+                <option @if($teacherEdit->status=='approved') selected @endif value="approved">Approved</option>
+                {{-- <option @if($teacherEdit->status=='cancel') selected @endif value="cancel">Cancel</option> --}}
+            </select>
+        </div>
+<hr>
         <div class="form-group">
             <label for="name">Name:</label>
             <input value="{{$teacherEdit->name}}" name="name" type="text" class="form-control" id="name" placeholder="Enter your name">

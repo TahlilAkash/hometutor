@@ -20,18 +20,17 @@
                         <span style="padding: 5px;">|</span>
                         <li><a href="{{route('member.registration')}}" class="nav-link">Registration</a></li>
                         @endguest
-
                         @auth
                         <li><a href="{{route('member.logout')}}" class="nav-link">Log Out</a>|</li>
                         <li> <a href="{{route('profile.view')}}" class="nav-link"> {{auth()->user()->name}} ({{ auth()->user()->role }}) </li>
                         @endauth
-
                         <li><a href="{{route('teacher.create.tuition.post')}}" class="nav-link">Create Tuition</a></li>
 
                         <li><a href="{{route('student.create.tuition.post')}}" class="nav-link">Need Tutor</a></li>
-
-                        <li><a href="" class="nav-link">About</a></li>
-                        <li><a href="" class="nav-link">Contact</a></li>
+                            @if(auth()->user())
+                            <li><a href="{{route('myPost',auth()?->user()?->id)}}" class="nav-link">My Post</a></li>
+                            @endif
+                        {{-- <li><a href="" class="nav-link">Contact</a></li> --}}
                     </ul>
                 </nav>
             </div>

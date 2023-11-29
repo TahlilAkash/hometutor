@@ -16,6 +16,8 @@ use App\Http\Controllers\Frontend\TeacherpostController;//teacher post
 use App\Http\Controllers\Frontend\StudentpostController;// student post
 use App\Http\Controllers\Frontend\PostController; // single post view
 use App\Http\Controllers\Frontend\ApplyPostController;// apply post 
+use App\Http\Controllers\Frontend\MyPostController; // mypost 
+
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 
 /*
@@ -58,7 +60,9 @@ Route::group(['middleware'=>'auth'],function(){
     //single cart view
     Route::get('/teacher-student/post/singleview/{id}',[PostController::class,'singlePostview'])->name('s_t.post.singleview');
 
-    
+    //Mypost
+    Route::get('/myPost/{id}',[MyPostController::class,'myPost'])->name('myPost');
+
 
 });
 

@@ -46,15 +46,17 @@ class StudentpostController extends Controller
             }
         
             TuitionPost::create([
-                'name'=>$request->name, // feild name --request --name property
+                'name'=>auth()->user()->name, // feild name --request --name property
                 'role'=>$request->role,
                 'email'=>$request->email,
-                // 'salary'=>$request->salary,
+                'user_id'=>auth()->user()->id,
+                
                 'class_list'=>$request->class_list,
                 'subject_name'=>$request->subject_name,
                 'salary'=>$request->salary,
                 'contact'=>$request->contact,
                 'address'=>$request->address,
+                'status'=>'pending',
                 'image'=>$fileName,
                 
             ]);

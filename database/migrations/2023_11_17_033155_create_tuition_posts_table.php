@@ -16,12 +16,13 @@ return new class extends Migration
             $table->string('name',20);// creating table feild with the name property of the form
             $table->string('role');
             $table->string('email');
-            
+            $table->integer('user_id');
             $table->string('class_list',15); 
             $table->string('subject_name',30);
             $table->string('salary',5);
             $table->string('contact');
             $table->string('address',30);
+            $table->string('status');
             $table->string('image')->nullable();
             $table->timestamps();
         });

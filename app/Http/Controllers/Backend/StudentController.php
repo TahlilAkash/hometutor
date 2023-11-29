@@ -16,9 +16,7 @@ class StudentController extends Controller
         return view('admin.pages.student.s_list',compact('Students'));
     }
 
-    // public function Student_Adv(){
-    //     return view('admin.pages.student.s_advertisement');
-    // }
+    
     public function delete($id)
     {
       $stuDelete=TuitionPost::find($id);
@@ -67,6 +65,7 @@ class StudentController extends Controller
             'class_list'=>$request->class_list,
             'subject_name'=>$request->subject_name,
             'salary'=>$request->salary,
+            'status'=>$request->status,
             'contact'=>$request->contact,
             'address'=>$request->address,
 

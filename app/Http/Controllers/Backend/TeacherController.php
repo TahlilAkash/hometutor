@@ -16,9 +16,7 @@ class TeacherController extends Controller
     }
 
 
-    // public function T_adv(){
-    //     return view('admin.pages.teacher.teacher_adv');
-    // }
+    
     public function delete($id)
     {
       $teacherDelete=TuitionPost::find($id);
@@ -34,7 +32,7 @@ class TeacherController extends Controller
     public function edit($id)
     {
       $teacherEdit=TuitionPost::find($id);
-      
+      // dd($teacherEdit);
       $subjects=Subject::all();
       $classts=Classt::all();
     
@@ -45,6 +43,7 @@ class TeacherController extends Controller
 
     public function update(Request $request,$id)
     {
+      // dd($request->all());
         $tUpdate=TuitionPost::find($id);
 
         if($tUpdate)
@@ -67,6 +66,7 @@ class TeacherController extends Controller
             'class_list'=>$request->class_list,
             'subject_name'=>$request->subject_name,
             'salary'=>$request->salary,
+            'status'=>$request->status,
             'contact'=>$request->contact,
             'address'=>$request->address,
 

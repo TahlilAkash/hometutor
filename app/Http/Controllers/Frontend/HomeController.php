@@ -13,9 +13,9 @@ class HomeController extends Controller
     {
         // $tuitionposts=TuitionPost::all();
 
-        $tuitionposts = TuitionPost::where('role' , '=', 'tuitor')->get();
+        $tuitionposts = TuitionPost::where('role' , '=', 'tuitor')->where('status','approved')->get();
 
-        $studentposts = TuitionPost::where('role' , '=', 'student')->get();
+        $studentposts = TuitionPost::where('role' , '=', 'student')->where('status','approved')->get();
         //dd( $studentposts->toarray());
         return view('frontend.partial.homeDashboard',compact('studentposts', 'tuitionposts'));
        
