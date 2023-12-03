@@ -20,5 +20,25 @@ class HomeController extends Controller
         return view('frontend.partial.homeDashboard',compact('studentposts', 'tuitionposts'));
        
     }
-    
+
+
+    // search
+    public function search(Request $request)
+    {
+        // dd(request()->all());
+
+        if($request->search)
+        {
+            $relatedposts=TuitionPost::where('subject_name','LIKE','%'.$request->search.'%')->get();
+            //select * from products where name like % akash %;
+        }else{
+            $relatedposts=TuitionPost::all();
+        }
+
+
+
+        return view("frontend.pages.search",compact('relatedposts'));
+    }
 }
+    
+

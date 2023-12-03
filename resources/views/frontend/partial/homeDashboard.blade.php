@@ -1,12 +1,20 @@
+
 @extends('frontend.master')
 @section('content')
 <div class="site-section-cover overlay h-25" style="background-color:#303030; height:50%">
     
     <div class="container">
+        <form action="{{route('subject.search')}}" method="get">
+            <input type="text" class="form-control mt-1"  style="width: 200px; display: inline-block;"  placeholder="Search by subject.." name="search">
+            <button type="submit" class="btn btn-success" style="border: 2px solid green; background-color: green; color: white ";>Search</button>
+        </form>
+        
         <div class="row align-items-center justify-content-center" >
             <div class="col-lg-10 text-center">
+                
                 <h1>Home <strong>Tutor</strong> Management<strong> System</strong></h1>
             </div>
+           
         </div>
     </div>
 </div>
@@ -55,7 +63,8 @@
                             @endif
 
                             <div class="d-flex v-card align-items-center">
-                                <img src="{{url('/uploads/'.$tpost->image)}}" alt="Image" class="img-fluid mr-3">
+                                <img src="{{url('/uploads/'.$tpost->image)}}" alt="Image" class="img-fluid mr-3" > 
+                                {{-- class="img-fluid mr-3" style="height:60px; width:25px";    to style the images    --}} 
                             </div>
                             <h6>Name: {{$tpost->name}}</h6>                       
                             <h6>Role: {{$tpost->role}}</h6>

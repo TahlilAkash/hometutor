@@ -11,7 +11,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('admin.dashboard')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -28,13 +28,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('student.list')}}">
                     <i class="fa-solid fa-chalkboard-user"></i>
-                    <span>Student List</span></a>
+                    <span>Student Post</span></a>
             </li>
             
             <li class="nav-item">
                 <a class="nav-link" href="{{route('teacher.list')}}">
                     <i class="fa-solid fa-user-graduate"></i>
-                    <span>Teacher List</span></a>
+                    <span>Teacher Post</span></a>
             </li>
             
             
@@ -79,19 +79,19 @@
             </li>
 
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('institute.list')}}">
                     <i class="fa-solid fa-school"></i>
                     <span>Institute</span></a>
-            </li>
+            </li> --}}
 
             
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('tuition.list')}}">
                     <i class="fa-solid fa-circle-info"></i>
                     <span>Tuition Type</span></a>
-            </li>
+            </li> --}}
 
 
 

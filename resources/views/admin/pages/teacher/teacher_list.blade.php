@@ -1,6 +1,14 @@
+{{-- <style>
+    .img {
+        width: 80px; 
+        height: 100px; 
+        border: 2px solid #ddd; 
+        border-radius: 8px; 
+        margin: 5px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+</style> --}}
 @extends('admin.master')
-
-
 
 @section('content')
 
@@ -38,7 +46,8 @@
         <td>{{$TList->address}}</td>
         <td><img class="img" src="{{url('/uploads/'.$TList->image)}}" alt="img"></td>
         <td>
-            <a href="{{route('teacherlist.edit',$TList->id)}}" class="btn btn-success">Edit</a>
+            <a href="{{route('teacherlist.edit',$TList->id)}}" class="btn btn-success mb-1">Edit</a>
+
             <a href="{{route('teacherlist.delete',$TList->id)}}" class="btn btn-danger">Delete</a>
         </td>
         </tr>

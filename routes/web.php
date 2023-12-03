@@ -33,7 +33,11 @@ use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 //web site home page
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
+//search option
+Route::get('/search-subject',[FrontendHomeController::class,'search'])->name('subject.search'); // header blade e serach from
 
+
+// registration 
 Route::get('/registration',[MemberController::class,'registration'])->name('member.registration');
 Route::post('/registration',[MemberController::class, 'store'])->name('member.store');
 
@@ -62,7 +66,8 @@ Route::group(['middleware'=>'auth'],function(){
 
     //Mypost
     Route::get('/myPost/{id}',[MyPostController::class,'myPost'])->name('myPost');
-
+    Route::get('/myPost/edit/{id}',[MyPostController::class, 'edit'])->name('myPost.edit');
+    Route::put('/myPost/update/{id}',[MyPostController::class, 'update'])->name('myPost.update');
 
 });
 

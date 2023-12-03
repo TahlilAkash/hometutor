@@ -12,8 +12,9 @@
             <th scope="col">Subject Name</th>
             <th scope="col">Salary</th>
             <th scope="col">Contact</th>
+            <th scope="col">Image</th>
             <th scope="col">Status</th>
-            {{-- <th scope="col">Action</th> --}}
+            <th scope="col">Action</th>
             {{-- <th scope="col">Action</th> --}}
             </tr>
         </thead>
@@ -26,15 +27,17 @@
             <td>{{$mp->subject_name}}</td>
             <td>{{$mp->salary}}.BDT</td>
             <td>{{$mp->contact}}</td>
+            <td><img class="img" src="{{url('/uploads/'.$mp->image)}}" alt="img"></td>
             <td>{{$mp->status}}</td>
             
             
-            {{-- <td><img class="img" src="{{url('/uploads/'.)}}" alt="img"></td> --}}
             
-            {{-- <td>
-                <a href="#" class="btn btn-success">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
-            </td> --}}
+            
+            
+            <td>
+                <a href="{{route('myPost.edit',$mp->id)}}" class="btn btn-success border ">Edit</a>
+                {{-- <a href="#" class="btn btn-danger">Delete</a> --}}
+            </td>
             </tr>
             @endforeach
         
